@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRA FITNESS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <!-- GSAP CDN -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script> 
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main bg-black text-white font-['Space_Grotesk'] w-full h-full selection:bg-lime-700">
+    <div class="fixed circle h-[1vw] w-[1vw] top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white z-[1] pointer-events-none mix-blend-difference overflow-hidden"></div>
+      <section class=" h-screen w-full">
+        <nav class="relative flex items-center justify-between w-full h-1/6 px-12 py-10 border-b-4">
+          <div class="logo text-4xl p-3">
+            <h1>Astra Fitness</h1>
+          </div>
+          <div class="menu flex justify-center items-center gap-10">
+            <a href=""><h4 class="link font-normal text-xl">Workout</h4></a>
+            <a href=""><h4 class="link font-normal text-xl">Challenges</h4></a>
+            <a href=""><h4 class="link font-normal text-xl">Diet</h4></a>
+            <a href=""><button class="link trans-bg font-normal border-2 rounded-full py-3 px-4 text-xl">Contact US</button></a>
+            <a href="{{url_for('signup')}}"><button class="link bg-white text-black font-normal border-2 rounded-full py-3 px-4 text-xl"><span>Get Started</span></button></a>
+          </div>
+        </nav>
+        <div class="flex items-center justify-between w-full h-5/6">
+          <div class="Landing-left z-[2] w-1/3">
+            <img class="landing-image absolute -left-24 bottom-0 pointer-events-none h-screen shadow-gray-700" src="{{ url_for('static', filename='images/landingpage.png') }}" alt="" />
+          </div>
+          <div
+            class="Landing-right flex justify-center items-center w-3/4 h-full text-stroke-2 font-medium text-[100px] text-transparent">
+            <h1 class="quote w-1/4 leading-[1] ">GET READY TO WORKOUT</h1>
+          </div>
+        </div>
+      </section>
+      <section class="services w-full h-screen flex flex-col gap-16 px-32 py-16">
+        <div class="services-header w-full flex gap-16">
+            <div class="col flex-2"></div>
+            <div class="section2title col flex-5 p-4 text-4xl">
+                <h1>All Services</h1>
+            </div>
+        </div>
+        <div onclick="window.location.href='Pushups'" class="service pushup">
+            <div class="service-info">
+                <h1>Pushup</h1>
+                <p>
+                    Get down on all fours and place your hands on the floor so that they’re slightly wider than and
+                    in line with your shoulders. <br><br>
+  
+                    Squeeze your glutes and brace your abdominals—as if you were about to be punched in the gut.
+                    Maintain these contractions for the duration of this exercise. <br><br>
+  
+                    Your body should form a straight line from your ankles to your head.<br><br>
+  
+                    Lower your body until your chest nearly touches the floor. Pause at the bottom, and then push
+                    yourself back to the starting position as quickly as possible. That's 1 rep.
+                </p>
+            </div>
+            <div class="service-img">
+                <div class="img"><img src="https://hips.hearstapps.com/hmg-prod/images/pushup-1462808858.gif"
+                        alt=""></div>
+            </div>
+        </div>
+        <div onclick="window.location.href='Squats'" class="service squats">
+            <div class="service-info">
+                <h1>Bodyweight Squat</h1>
+                <p>
+                    Stand as tall as you can with your feet spread shoulder-width apart.<br><br>
+  
+                    Push your hips back, bend your knees, and lower your body until your upper thighs are parallel
+                    to the floor (or as low as you can comfortably go). Reach out your arms in front of you for
+                    balance.<br><br>
+  
+                    As you lower, imagine that you're screwing your feet into the floor by actively pressing your
+                    ankles, lower legs, and thighs outward. (Your feet won't move, but you'll be creating tension.)<br><br>
+  
+                    Pause, and then return to standing.
+                </p>
+            </div>
+            <div class="service-img">
+                <div class="img"><img
+                        src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/bodyweightsquat-1457041691.gif?crop=1xw:0.75xh;center,top&resize=1200:*"
+                        alt=""></div>
+            </div>
+        </div>
+        
+        <!-- <div class="service">
+            <div class="service-info">
+                <h1>Dumbbell Overhead Press</h1>
+                <p>
+                    Stand holding a pair of dumbbells just outside your shoulders, your arms bent and palms facing
+                    your body. <br><br>
+                    Press the weights directly over your shoulders until your arms are straight and your biceps are
+                    next to your ears. As you press, twist the weights so that your palms face foward. <br><br>
+                    Lower the dumbbells to the starting position.
+                </p>
+            </div>
+            <div class="service-img">
+                <div class="img"><img
+                        src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/dumbbellshoulderpress-1457041578.gif?resize=1200:*"
+                        alt=""></div>
+            </div>
+        </div>
+        <div class="service">
+            <div class="service-info">
+                <h1>Jumping Jack</h1>
+                <p>
+                    Stand with your feet together and your hands at your sides. Simultaneously raise your arms above
+                    your head and jump up just enough to spread your feet out wide. Without pausing, quickly reverse
+                    the movement and repeat.
+                </p>
+            </div>
+            <div class="service-img">
+                <div class="img"><img
+                        src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/jumpingjack-1457045563.gif?crop=1xw:0.5xh;center,top&resize=1200:*"
+                        alt=""></div>
+            </div>
+        </div> -->
+      </section>
+    </div>
+    <script src="{{ url_for('static', filename='js/land.js') }}"></script>
+  </body>
+</html>

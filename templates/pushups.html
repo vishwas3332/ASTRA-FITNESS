@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push-Up Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+    <h1 class="flex justify-center items-center text-xl">Push-Up Counter</h1>
+    <img class="" src="{{ url_for('video_feed') }}" width="800" height="600">
+    <br>
+    <button class=" absolute left-32 flex justify-center items-center bg-red-400 rounded-full p-4" onclick="location.reload()">Start Counting Push-Ups</button>
+</body>
+</html>
